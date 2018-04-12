@@ -7,12 +7,9 @@ public class TCPConnection {
     private final Socket socket;
     private final Thread rxThread;
     private final TCPConnectionListener eventListener;
-    private final DataInputStream in;
-    private final DataOutputStream out;
-    private final PrintStream printStream;
-    private final OutputStream testOut;
-    private final InputStream testTestInput;
-    private final OutputStream testOutPut;
+
+    private final OutputStream os;
+    private final InputStream is;
 
     public TCPConnection(TCPConnectionListener eventListener, String ipAddr, int port) throws IOException {
         this(eventListener, new Socket(ipAddr, port));
@@ -21,33 +18,20 @@ public class TCPConnection {
     public TCPConnection(TCPConnectionListener eventListener, Socket socket) throws IOException {
         this.eventListener = eventListener;
         this.socket = socket;
-        File file = new  File("C:\\Data","testServer.xml");
-        testTestInput = new FileInputStream(file);
-        testOutPut = socket.getOutputStream();
-        in = new DataInputStream(new BufferedInputStream(socket.getInputStream()));
-        out = new DataOutputStream(socket.getOutputStream());
-        printStream = new PrintStream(new BufferedOutputStream(socket.getOutputStream(), 1024), false);
-        testOut = socket.getOutputStream();
-        final int[] cout = new int[1];
+
+        os = socket.getOutputStream();
+        is = socket.getInputStream();
+
         rxThread = new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
+                    int c;
                     eventListener.onConnectionReady(TCPConnection.this);
-                    while (!rxThread.isInterrupted()) {
-                        byte[] bytes = new byte[1024];
-                        cout[0] = testTestInput.read(bytes);
-                        while ((cout[0])>0){
-                            out.write(bytes,0,cout[0]);
+                    while (!rxThread.isInterrupted()){
+                        while ((c = is.read()) != -1){
                         }
-                        String outMessage = in.readUTF();
-                        String test = outMessage.substring(0,9);
-                        if(test.equals("TEST_SOUT")){
-                            eventListener.onReceiveString(TCPConnection.this, "Тест удался 2");
-                        }
-                        System.out.println("RRRRRRRR");
-                        eventListener.onReceiveString(TCPConnection.this,test);
-                        eventListener.onReceiveString(TCPConnection.this, outMessage);
+                        eventListener.onReceiveByte(TCPConnection.this, is);
                     }
                 } catch (IOException e) {
                     eventListener.onException(TCPConnection.this, e);
@@ -59,32 +43,54 @@ public class TCPConnection {
         rxThread.start();
     }
 
-    public synchronized void sendString(String value) {
-        try {
-            out.writeUTF(value);
-        } catch (IOException e1) {
-            e1.printStackTrace();
-        }
-    }
-    public synchronized void sendXml(File file){
-
-    }
-
-    public synchronized void disconnect() {
+    public synchronized void disconnect(){
         rxThread.interrupt();
         try {
             socket.close();
         } catch (IOException e) {
-            eventListener.onException(this, e);
+            eventListener.onException(TCPConnection.this, e);
         }
     }
 
-    public InputStream getTestTestInput() {
-        return testTestInput;
+    public synchronized void sendString(String value){
+        try(BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(os))) {
+            bw.write(value);
+            bw.flush();
+            os.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+            disconnect();
+        }
     }
-
-    public OutputStream getTestOutPut() {
-        return testOutPut;
+    public synchronized void sendFile(File file){
+        try (InputStream is = new FileInputStream(file)) {
+            int count;
+            byte[] bytes = new byte[4096];
+            while ((count = is.read(bytes)) > 0){
+                os.write(bytes,0,count);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public synchronized void sendTestMessage(){
+        try {
+            os.write(1);
+            os.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public synchronized void sendObject(Object object){
+        try(ObjectOutputStream oos = new ObjectOutputStream(os)) {
+            oos.writeObject(object);
+            oos.flush();
+            os.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

@@ -1,7 +1,9 @@
 package ru.netcracker.ibublig.client.view.model;
 
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -11,7 +13,9 @@ public class Category {
 
     public Category() {
         name = new SimpleStringProperty("test");
-        items.add(new Item());
+    }
+    public Category(String name){
+        this.name = new SimpleStringProperty(name);
     }
     public Category(String name, ObservableList<Item> items){
         this.name = new SimpleStringProperty(name);
@@ -23,17 +27,45 @@ public class Category {
         this.items.add(items);
     }
 
-    public String getNameItem(){
-        return items.get(0).getName();
+    public int getSize(){
+        return items.size();
     }
-    public String getDescriptionItem(){
-        return items.get(0).getDescription();
+
+    public ObservableValue<String> getNameItem(int i){
+        int size = items.size();
+        ObservableValue<String> test;
+        if(i < size){
+            test = new SimpleStringProperty(items.get(i).getName());
+        } else
+            return null;
+        return test;
     }
-    public Integer getCostItem(){
-        return items.get(0).getCost();
+    public ObservableValue<String> getDescriptionItem(int i){
+        int size = items.size();
+        ObservableValue<String> test;
+        if(i < size){
+            test = new SimpleStringProperty(items.get(i).getDescription());
+        } else
+            return null;
+        return test;
     }
-    public Integer getCountItem(){
-        return items.get(0).getCount();
+    public ObservableValue<String> getCostItem(int i){
+        int size = items.size();
+        ObservableValue<String> test;
+        if(i < size){
+            test = new SimpleStringProperty(items.get(i).getCost().toString());
+        } else
+            return null;
+        return test;
+    }
+    public ObservableValue<String> getCountItem(int i){
+        int size = items.size();
+        ObservableValue<String> test;
+        if(i < size){
+            test = new SimpleStringProperty(items.get(i).getCount().toString());
+        } else
+            return null;
+        return test;
     }
 
     public String getName() {
@@ -54,5 +86,9 @@ public class Category {
 
     public void setItems(ObservableList<Item> items) {
         this.items = items;
+    }
+
+    public void addItems(Item item){
+        items.add(item);
     }
 }

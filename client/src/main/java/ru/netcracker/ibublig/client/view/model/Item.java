@@ -52,7 +52,7 @@ public class Item {
         this.description.set(description);
     }
 
-    public int getCost() {
+    public Integer getCost() {
         return cost.get();
     }
 
@@ -64,7 +64,7 @@ public class Item {
         this.cost.set(cost);
     }
 
-    public int getCount() {
+    public Integer getCount() {
         return count.get();
     }
 
