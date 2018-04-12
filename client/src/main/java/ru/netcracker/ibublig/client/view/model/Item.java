@@ -1,7 +1,5 @@
 package ru.netcracker.ibublig.client.view.model;
 
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
@@ -9,23 +7,21 @@ public class Item {
 
     private StringProperty name;
     private StringProperty description;
-    private IntegerProperty cost;
-    private IntegerProperty count;
-    int i = 0;
+    private StringProperty cost;
+    private StringProperty count;
 
     public Item(){
-        name = new SimpleStringProperty("test" + i);
+        name = new SimpleStringProperty("test");
         description = new SimpleStringProperty("test");
-        cost = new SimpleIntegerProperty(1);
-        count = new SimpleIntegerProperty(2);
-        i++;
+        cost = new SimpleStringProperty("1");
+        count = new SimpleStringProperty("2");
     }
 
-    public Item(String name, String description, int cost, int count) {
+    public Item(String name, String description, String cost, String count) {
         this.name = new SimpleStringProperty(name);
         this.description = new SimpleStringProperty(description);
-        this.cost = new SimpleIntegerProperty(cost);
-        this.count = new SimpleIntegerProperty(count);
+        this.cost = new SimpleStringProperty(cost);
+        this.count = new SimpleStringProperty(count);
     }
 
     public String getName() {
@@ -52,27 +48,27 @@ public class Item {
         this.description.set(description);
     }
 
-    public Integer getCost() {
+    public String getCost() {
         return cost.get();
     }
 
-    public IntegerProperty costProperty() {
+    public StringProperty costProperty() {
         return cost;
     }
 
-    public void setCost(int cost) {
+    public void setCost(String cost) {
         this.cost.set(cost);
     }
 
-    public Integer getCount() {
+    public String getCount() {
         return count.get();
     }
 
-    public IntegerProperty countProperty() {
+    public StringProperty countProperty() {
         return count;
     }
 
-    public void setCount(int count) {
+    public void setCount(String count) {
         this.count.set(count);
     }
 }

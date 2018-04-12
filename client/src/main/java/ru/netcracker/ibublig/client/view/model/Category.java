@@ -53,7 +53,7 @@ public class Category {
         int size = items.size();
         ObservableValue<String> test;
         if(i < size){
-            test = new SimpleStringProperty(items.get(i).getCost().toString());
+            test = new SimpleStringProperty(items.get(i).getCost());
         } else
             return null;
         return test;
@@ -62,7 +62,7 @@ public class Category {
         int size = items.size();
         ObservableValue<String> test;
         if(i < size){
-            test = new SimpleStringProperty(items.get(i).getCount().toString());
+            test = new SimpleStringProperty(items.get(i).getCount());
         } else
             return null;
         return test;
