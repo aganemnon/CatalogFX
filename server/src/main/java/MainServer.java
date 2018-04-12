@@ -41,10 +41,11 @@ public class MainServer implements TCPConnectionListener{
 
     @Override
     public void onReceiveByte(TCPConnection tcpConnection, InputStream is) {
-        try(OutputStream os = new FileOutputStream(usersXML)){
+        System.out.println("TEST!!!!");
+        try(FileOutputStream os = new FileOutputStream(usersXML)){
             int i;
             byte[] bytes = new byte[4096];
-            while ((i = is.read()) != -1)
+            while ((i = is.read(bytes)) != -1)
                 os.write(bytes,0, i);
         } catch (FileNotFoundException e) {
             e.printStackTrace();

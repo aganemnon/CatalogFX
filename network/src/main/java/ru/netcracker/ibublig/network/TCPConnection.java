@@ -29,9 +29,9 @@ public class TCPConnection {
                     int c;
                     eventListener.onConnectionReady(TCPConnection.this);
                     while (!rxThread.isInterrupted()){
+                        eventListener.onReceiveByte(TCPConnection.this, is);
                         while ((c = is.read()) != -1){
                         }
-                        eventListener.onReceiveByte(TCPConnection.this, is);
                     }
                 } catch (IOException e) {
                     eventListener.onException(TCPConnection.this, e);
