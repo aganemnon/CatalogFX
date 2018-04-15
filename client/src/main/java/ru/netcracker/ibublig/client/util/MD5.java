@@ -5,10 +5,10 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class MD5 {
-    public static String md5Custom(String login, String password){
+    public static String md5Custom(String login, String password) {
         MessageDigest messageDigest;
         byte[] digest = new byte[0];
-        String lp = login+password;
+        String lp = login + password;
         try {
             messageDigest = MessageDigest.getInstance("MD5");
             messageDigest.reset();
@@ -21,7 +21,7 @@ public class MD5 {
         BigInteger bigInteger = new BigInteger(1, digest);
         String md5Hex = bigInteger.toString(16);
 
-        while (md5Hex.length() < 32){
+        while (md5Hex.length() < 32) {
             md5Hex = "0" + md5Hex;
         }
         return md5Hex;

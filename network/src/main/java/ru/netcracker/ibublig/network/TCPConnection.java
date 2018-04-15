@@ -28,9 +28,9 @@ public class TCPConnection {
                 try {
                     int c;
                     eventListener.onConnectionReady(TCPConnection.this);
-                    while (!rxThread.isInterrupted()){
+                    while (!rxThread.isInterrupted()) {
                         eventListener.onReceiveByte(TCPConnection.this, is);
-                        while ((c = is.read()) != -1){
+                        while ((c = is.read()) != -1) {
                         }
                     }
                 } catch (IOException e) {
@@ -43,7 +43,7 @@ public class TCPConnection {
         rxThread.start();
     }
 
-    public synchronized void disconnect(){
+    public synchronized void disconnect() {
         rxThread.interrupt();
         try {
             socket.close();
@@ -52,8 +52,8 @@ public class TCPConnection {
         }
     }
 
-    public synchronized void sendString(String value){
-        try(BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(os))) {
+    public synchronized void sendString(String value) {
+        try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(os))) {
             bw.write(value);
             bw.flush();
             os.flush();
@@ -62,12 +62,13 @@ public class TCPConnection {
             disconnect();
         }
     }
-    public synchronized void sendFile(File file){
+
+    public synchronized void sendFile(File file) {
         try (InputStream is = new FileInputStream(file)) {
             int count;
             byte[] bytes = new byte[4096];
-            while ((count = is.read(bytes)) > 0){
-                os.write(bytes,0,count);
+            while ((count = is.read(bytes)) > 0) {
+                os.write(bytes, 0, count);
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -75,7 +76,8 @@ public class TCPConnection {
             e.printStackTrace();
         }
     }
-    public synchronized void sendTestMessage(){
+
+    public synchronized void sendTestMessage() {
         try {
             os.write(1);
             os.flush();
@@ -83,18 +85,25 @@ public class TCPConnection {
             e.printStackTrace();
         }
     }
-    public synchronized void sendObject(Object object){
-        try(ObjectOutputStream oos = new ObjectOutputStream(os)) {
+
+    public synchronized void sendObject(Object object) {
+        try {
+            ObjectOutputStream oos = new ObjectOutputStream(os);
             oos.writeObject(object);
             oos.flush();
-            os.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void sendAuthorization(String text, String s) {
+        System.out.println(text + " " + s);
     }
 
     @Override
     public String toString() {
         return "TCPConnection: " + socket.getInetAddress() + ": " + socket.getPort();
     }
+
+
 }

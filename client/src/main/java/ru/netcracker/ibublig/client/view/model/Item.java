@@ -10,7 +10,7 @@ public class Item {
     private StringProperty cost;
     private StringProperty count;
 
-    public Item(){
+    public Item() {
         name = new SimpleStringProperty("test");
         description = new SimpleStringProperty("test");
         cost = new SimpleStringProperty("1");

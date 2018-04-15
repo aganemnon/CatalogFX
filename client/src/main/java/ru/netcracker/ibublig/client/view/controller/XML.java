@@ -15,8 +15,8 @@ public class XML {
 
     private ObservableList<Category> categories = FXCollections.observableArrayList();
 
-    public XML(ObservableList<Category> categories){
-        this.categories=categories;
+    public XML(ObservableList<Category> categories) {
+        this.categories = categories;
     }
 
     public void loadPersonDataFromFile(File file) {

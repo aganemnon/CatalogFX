@@ -14,10 +14,12 @@ public class Category {
     public Category() {
         name = new SimpleStringProperty("test");
     }
-    public Category(String name){
+
+    public Category(String name) {
         this.name = new SimpleStringProperty(name);
     }
-    public Category(String name, ObservableList<Item> items){
+
+    public Category(String name, ObservableList<Item> items) {
         this.name = new SimpleStringProperty(name);
         this.items = items;
     }
@@ -27,41 +29,44 @@ public class Category {
         this.items.add(items);
     }
 
-    public int getSize(){
+    public int getSize() {
         return items.size();
     }
 
-    public ObservableValue<String> getNameItem(int i){
+    public ObservableValue<String> getNameItem(int i) {
         int size = items.size();
         ObservableValue<String> test;
-        if(i < size){
+        if (i < size) {
             test = new SimpleStringProperty(items.get(i).getName());
         } else
             return null;
         return test;
     }
-    public ObservableValue<String> getDescriptionItem(int i){
+
+    public ObservableValue<String> getDescriptionItem(int i) {
         int size = items.size();
         ObservableValue<String> test;
-        if(i < size){
+        if (i < size) {
             test = new SimpleStringProperty(items.get(i).getDescription());
         } else
             return null;
         return test;
     }
-    public ObservableValue<String> getCostItem(int i){
+
+    public ObservableValue<String> getCostItem(int i) {
         int size = items.size();
         ObservableValue<String> test;
-        if(i < size){
+        if (i < size) {
             test = new SimpleStringProperty(items.get(i).getCost());
         } else
             return null;
         return test;
     }
-    public ObservableValue<String> getCountItem(int i){
+
+    public ObservableValue<String> getCountItem(int i) {
         int size = items.size();
         ObservableValue<String> test;
-        if(i < size){
+        if (i < size) {
             test = new SimpleStringProperty(items.get(i).getCount());
         } else
             return null;
@@ -88,7 +93,7 @@ public class Category {
         this.items = items;
     }
 
-    public void addItems(Item item){
+    public void addItems(Item item) {
         items.add(item);
     }
 }

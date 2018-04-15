@@ -25,25 +25,27 @@ public class RegistrationController {
 
     private FXMain fxMain = new FXMain();
 
-    public RegistrationController(){
+    public RegistrationController() {
 
     }
 
     @FXML
-    private void registration(){
-        if (password.getText().equals(confirmPassword.getText())){
+    private void registration() {
+        if (password.getText().equals(confirmPassword.getText())) {
             String truePassword;
             truePassword = password.getText();
-            fxMain.getUserData().add(new User(firstName.getText(),lastName.getText(),true,login.getText(),truePassword));
+            //fxMain.getUserData().add(new User(firstName.getText(),lastName.getText(),true,login.getText(),truePassword));
             fxMain.initAuthorization();
-        }else {
+        } else {
             errorPassword.setText("Введеный вами пароль не совпадает!!!");
         }
     }
+
     @FXML
-    private void cancel(){
+    private void cancel() {
         fxMain.initAuthorization();
     }
+
     @FXML
     private void initialize() {
     }
