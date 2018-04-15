@@ -31,6 +31,7 @@ public class FXMain extends Application implements TCPConnectionListener {
     private ARController arController;
     private ArrayList<Category> category;
     private CatalogController catalogController;
+    private AuthorizationController authorizationController;
 
     public ArrayList<Category> getCategory() {
         return category;
@@ -65,8 +66,8 @@ public class FXMain extends Application implements TCPConnectionListener {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(FXMain.class.getResource("view/view/AuthorizationLayout.fxml"));
             AnchorPane root = (AnchorPane) loader.load();
-            AuthorizationController controller = loader.getController();
-            controller.setMainApp(this);
+            authorizationController = loader.getController();
+            authorizationController.setMainApp(this);
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
             primaryStage.show();
@@ -142,12 +143,21 @@ public class FXMain extends Application implements TCPConnectionListener {
     public void onReceiveByte(TCPConnection tcpConnection, Object object) {
         if (object instanceof User){
             User user = (User) object;
-            Platform.runLater(new Runnable() {
-                @Override
-                public void run() {
-                    showCatalog(user);
-                }
-            });
+            if(user.getLogin().equals("")){
+                Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        authorizationController.setErrorPassword();
+                    }
+                });
+            }else {
+                Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        showCatalog(user);
+                    }
+                });
+            }
         } else if(object instanceof ArrayList){
             category = (ArrayList<Category>) object;
             Platform.runLater(new Runnable() {

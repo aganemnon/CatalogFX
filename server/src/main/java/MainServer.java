@@ -50,7 +50,9 @@ public class MainServer implements TCPConnectionListener {
                     if (connections.get(i).equals(tcpConnection)) {
                         int id = i;
                         connections.get(id).sendObject(serverController.authorizationUser(user));
-                        connections.get(id).sendObject(serverController.getCategories());
+                        if(!serverController.authorizationUser(user).getLogin().equals("")){
+                            connections.get(id).sendObject(serverController.getCategories());
+                        }
                     }
                 }
             }

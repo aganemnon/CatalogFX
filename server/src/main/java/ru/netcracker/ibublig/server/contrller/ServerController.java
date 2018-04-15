@@ -53,7 +53,7 @@ public class ServerController {
                 }
             }
         }
-        return null;
+        return new User("","","","",false);
     }
 
     public ArrayList<Category> getCategories() {

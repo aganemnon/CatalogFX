@@ -63,6 +63,10 @@ public class AuthorizationController {
         System.out.println("Регистрация");
     }
 
+    public void setErrorPassword() {
+        errorPassword.setText("Неправильной логин или пароль");
+    }
+
     /**
      * Инициализирует класс-контроллер. Этот метод вызывается автоматически
      * после того, как fxml-файл будет загружен.

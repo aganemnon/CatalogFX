@@ -57,16 +57,13 @@ public class CatalogController {
             }
         });
 
-
-        //Зачем то создавал, трогать не буду
-        final ObservableList<String> test = FXCollections.observableArrayList();
+        final ObservableList<String> listViewNameCategory = FXCollections.observableArrayList();
 
         for (int i = 0; i < categories.size(); i++) {
-            test.add(categories.get(i).getName());
-            //System.out.println(test.get(i));
+            listViewNameCategory.add(categories.get(i).getName());
         }
 
-        listView.setItems(test);
+        listView.setItems(listViewNameCategory);
     }
 
     @FXML

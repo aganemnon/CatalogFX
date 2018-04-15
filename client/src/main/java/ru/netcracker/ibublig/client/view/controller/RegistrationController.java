@@ -34,7 +34,7 @@ public class RegistrationController {
         if (password.getText().equals(confirmPassword.getText())) {
             String truePassword;
             truePassword = password.getText();
-            //fxMain.getUserData().add(new User(firstName.getText(),lastName.getText(),true,login.getText(),truePassword));
+            fxMain.getTcpConnection().sendObject(new ru.netcracker.ibublig.model.User(firstName.getText(),lastName.getText(),login.getText(),truePassword,false));
             fxMain.initAuthorization();
         } else {
             errorPassword.setText("Введеный вами пароль не совпадает!!!");
