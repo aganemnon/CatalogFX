@@ -1,6 +1,6 @@
 package ru.netcracker.ibublig.client.controller;
 
-import ru.netcracker.ibublig.client.model.User;
+import ru.netcracker.ibublig.model.User;
 import ru.netcracker.ibublig.network.TCPConnection;
 
 public class ARController {

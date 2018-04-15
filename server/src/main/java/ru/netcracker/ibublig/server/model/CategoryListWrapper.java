@@ -1,10 +1,12 @@
-package ru.netcracker.ibublig.client.view.model;
+package ru.netcracker.ibublig.server.model;
+
+import ru.netcracker.ibublig.model.Category;
 
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
-@XmlRootElement(name = "catalog")
-public class CatalogListWrapper {
+@XmlRootElement
+public class CategoryListWrapper {
     private List<Category> categories;
 
     public List<Category> getCategories() {

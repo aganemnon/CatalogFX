@@ -7,27 +7,24 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import ru.netcracker.ibublig.client.FXMain;
 import ru.netcracker.ibublig.client.view.model.Category;
 import ru.netcracker.ibublig.client.view.model.Item;
+import ru.netcracker.ibublig.model.User;
 
-import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class CatalogController {
 
     private ObservableList<Category> categories = FXCollections.observableArrayList();
-    FXMain fxMain;
+    private FXMain fxMain;
+    private User user;
 
     @FXML
     private ListView<String> listView = new ListView<>();
-    @FXML
-    private TextField serchField;
     @FXML
     private TableView categoryTableView;
     @FXML
@@ -38,17 +35,15 @@ public class CatalogController {
     private TableColumn<Item, String> categoryCostTableColumn;
     @FXML
     private TableColumn<Item, String> categoryCountTableColumn;
+    @FXML
+    private Label welcome;
+
+    public CatalogController() {
+
+    }
 
     @FXML
     private void initialize() {
-        //TODO Добавить метод который обращается к серверу за XML
-        XML xml = new XML(categories);
-        xml.loadPersonDataFromFile(new File("C:\\Data", "Catalog.xml"));
-
-        //testData();
-
-        //xml.savePersonDataToFile(new File("C:\\Data","Catalog.xml"));
-
         listView.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
@@ -72,27 +67,55 @@ public class CatalogController {
         }
 
         listView.setItems(test);
-
     }
 
     @FXML
     private void admin() {
-        try {
-            System.out.println("Вход в админ панель");
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(fxMain.getClass().getResource("view/view/AdminLayout.fxml"));
-            Scene scene = new Scene((AnchorPane) loader.load());
-            AdminController controller = loader.getController();
-            controller.getMain(fxMain);
-            fxMain.getPrimaryStage().setScene(scene);
-            fxMain.getPrimaryStage().show();
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (user.isAdmin()) {
+            try {
+                System.out.println("Вход в админ панель");
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(fxMain.getClass().getResource("view/view/AdminLayout.fxml"));
+                Scene scene = new Scene((AnchorPane) loader.load());
+                AdminController controller = loader.getController();
+                controller.getMain(fxMain);
+                fxMain.getPrimaryStage().setScene(scene);
+                fxMain.getPrimaryStage().show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.initOwner(fxMain.getPrimaryStage());
+            alert.setTitle("Доступ запрещен");
+            alert.setHeaderText("Вы не имеете права администратора");
+            alert.setContentText("Закройте и не приходите сюда больше");
+
+            alert.showAndWait();
         }
     }
 
     public void setMainApp(FXMain fxMain) {
         this.fxMain = fxMain;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+        welcome.setText("Добро пожаловать, " + user.getFirstName() + " " + user.getLastName());
+    }
+
+    public void setCategories(ArrayList<ru.netcracker.ibublig.model.Category> category) {
+        ObservableList<Item> items = FXCollections.observableArrayList();
+        for (int i = 0; i < category.size(); i++) {
+            for (int j = 0; j < category.get(i).getItems().size(); j++) {
+                items.add(new Item(category.get(i).getItems().get(j).getName(),
+                        category.get(i).getItems().get(j).getDescription(),
+                        category.get(i).getItems().get(j).getCost(),
+                        category.get(i).getItems().get(j).getCount()));
+            }
+            categories.add(new Category(category.get(i).getNameCategory(),items));
+        }
+        initialize();
     }
 
     private void testData() {

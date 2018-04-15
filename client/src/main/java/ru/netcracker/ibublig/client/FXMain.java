@@ -1,13 +1,16 @@
 package ru.netcracker.ibublig.client;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import ru.netcracker.ibublig.client.controller.ARController;
-import ru.netcracker.ibublig.client.model.User;
+import ru.netcracker.ibublig.client.view.controller.CatalogController;
+import ru.netcracker.ibublig.model.Category;
+import ru.netcracker.ibublig.model.User;
 import ru.netcracker.ibublig.client.view.controller.AdminEditController;
 import ru.netcracker.ibublig.client.view.controller.AuthorizationController;
 import ru.netcracker.ibublig.client.view.model.Item;
@@ -15,6 +18,7 @@ import ru.netcracker.ibublig.network.TCPConnection;
 import ru.netcracker.ibublig.network.TCPConnectionListener;
 
 import java.io.*;
+import java.util.ArrayList;
 
 public class FXMain extends Application implements TCPConnectionListener {
 
@@ -25,6 +29,12 @@ public class FXMain extends Application implements TCPConnectionListener {
 
     private TCPConnection tcpConnection;
     private ARController arController;
+    private ArrayList<Category> category;
+    private CatalogController catalogController;
+
+    public ArrayList<Category> getCategory() {
+        return category;
+    }
 
     public FXMain() {
         //userData.add(new User("Илья","Сиротин", true, "admin", "1234"));
@@ -46,8 +56,6 @@ public class FXMain extends Application implements TCPConnectionListener {
         } catch (IOException e) {
             System.out.println(e);
         }
-        arController = new ARController(new User("admin", "admin"), tcpConnection);
-        arController.sendUserAR();
     }
 
 
@@ -98,6 +106,24 @@ public class FXMain extends Application implements TCPConnectionListener {
             return false;
         }
     }
+    public void showCatalog(User user){
+        try {
+            System.out.println("Успешная авторизация!!!");
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(FXMain.class.getResource("view/view/CatalogLayout.fxml"));
+            Scene scene = new Scene((AnchorPane) loader.load());
+            catalogController = loader.getController();
+
+            catalogController.setMainApp(this);
+            catalogController.setUser(user);
+
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public TCPConnection getTcpConnection() {
         return tcpConnection;
@@ -113,8 +139,25 @@ public class FXMain extends Application implements TCPConnectionListener {
     }
 
     @Override
-    public void onReceiveByte(TCPConnection tcpConnection, InputStream value) {
-        System.out.println(value);
+    public void onReceiveByte(TCPConnection tcpConnection, Object object) {
+        if (object instanceof User){
+            User user = (User) object;
+            Platform.runLater(new Runnable() {
+                @Override
+                public void run() {
+                    showCatalog(user);
+                }
+            });
+        } else if(object instanceof ArrayList){
+            category = (ArrayList<Category>) object;
+            Platform.runLater(new Runnable() {
+                @Override
+                public void run() {
+                    catalogController.setCategories(category);
+                }
+            });
+
+        }
     }
 
     @Override

@@ -36,8 +36,6 @@ public class AdminController {
 
     @FXML
     public void initialize() {
-        XML xml = new XML(categories);
-        xml.loadPersonDataFromFile(new File("C:\\Data", "Catalog.xml"));
 
         listView.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override

@@ -2,40 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c7c7cd8-544f-44dd-ae37-8b0327d75266" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/controller/ARController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/controller/CatalogController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/model/Catalog.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/model/Item.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/model/User.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/AdminEditController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/model/Usss.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/view/AdminEditItemLayout.fxml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/network/src/main/java/ru/netcracker/ibublig/model/Category.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/network/src/main/java/ru/netcracker/ibublig/model/Item.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/network/src/main/java/ru/netcracker/ibublig/model/User.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/contrller/CategoryWrapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/model/CategoryListWrapper.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/util/MD5.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/XML.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/model/CatalogListWrapper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/model/Usss.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/target/classes/ru/netcracker/ibublig/client/util/MD5.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/client/target/classes/ru/netcracker/ibublig/client/view/model/CatalogListWrapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/model/User.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/util/MD5.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/view/ConsoleLog.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/server/target/classes/ru/netcracker/ibublig/server/contrller/TestWrapper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/server/target/classes/ru/netcracker/ibublig/server/model/User.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/server/target/classes/ru/netcracker/ibublig/server/util/MD5.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/server/target/classes/ru/netcracker/ibublig/server/view/ConsoleLog.class" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/contrller/TestWrapper.java" afterPath="$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/contrller/UserWrapper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/target/classes/ru/netcracker/ibublig/client/FXMain.class" afterPath="$PROJECT_DIR$/client/target/classes/ru/netcracker/ibublig/client/FXMain.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/target/classes/ru/netcracker/ibublig/client/view/controller/AdminController.class" afterPath="$PROJECT_DIR$/client/target/classes/ru/netcracker/ibublig/client/view/controller/AdminController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/target/classes/ru/netcracker/ibublig/client/view/controller/AuthorizationController.class" afterPath="$PROJECT_DIR$/client/target/classes/ru/netcracker/ibublig/client/view/controller/AuthorizationController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/target/classes/ru/netcracker/ibublig/client/view/controller/CatalogController.class" afterPath="$PROJECT_DIR$/client/target/classes/ru/netcracker/ibublig/client/view/controller/CatalogController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/target/classes/ru/netcracker/ibublig/client/view/controller/RegistrationController.class" afterPath="$PROJECT_DIR$/client/target/classes/ru/netcracker/ibublig/client/view/controller/RegistrationController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/target/classes/ru/netcracker/ibublig/client/view/model/Category.class" afterPath="$PROJECT_DIR$/client/target/classes/ru/netcracker/ibublig/client/view/model/Category.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/target/classes/ru/netcracker/ibublig/client/view/model/Item.class" afterPath="$PROJECT_DIR$/client/target/classes/ru/netcracker/ibublig/client/view/model/Item.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/target/classes/ru/netcracker/ibublig/client/view/model/User.class" afterPath="$PROJECT_DIR$/client/target/classes/ru/netcracker/ibublig/client/view/model/User.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/network/target/classes/ru/netcracker/ibublig/network/TCPConnection$1.class" afterPath="$PROJECT_DIR$/network/target/classes/ru/netcracker/ibublig/network/TCPConnection$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/network/target/classes/ru/netcracker/ibublig/network/TCPConnection.class" afterPath="$PROJECT_DIR$/network/target/classes/ru/netcracker/ibublig/network/TCPConnection.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/network/target/classes/ru/netcracker/ibublig/network/TCPConnectionListener.class" afterPath="$PROJECT_DIR$/network/target/classes/ru/netcracker/ibublig/network/TCPConnectionListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/target/classes/MainServer.class" afterPath="$PROJECT_DIR$/server/target/classes/MainServer.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/target/classes/ru/netcracker/ibublig/server/contrller/ServerController.class" afterPath="$PROJECT_DIR$/server/target/classes/ru/netcracker/ibublig/server/contrller/ServerController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/target/classes/ru/netcracker/ibublig/server/model/UserListWrapper.class" afterPath="$PROJECT_DIR$/server/target/classes/ru/netcracker/ibublig/server/model/UserListWrapper.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/FXMain.java" afterPath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/FXMain.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/util/MD5.java" afterPath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/util/MD5.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/controller/ARController.java" afterPath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/controller/ARController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/AdminController.java" afterPath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/AdminController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/AuthorizationController.java" afterPath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/AuthorizationController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/CatalogController.java" afterPath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/CatalogController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/RegistrationController.java" afterPath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/RegistrationController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/XML.java" afterPath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/XML.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/model/CatalogListWrapper.java" afterPath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/model/CatalogListWrapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/model/Category.java" afterPath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/model/Category.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/model/Item.java" afterPath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/model/Item.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/model/User.java" afterPath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/model/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/view/AdminLayout.fxml" afterPath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/view/AdminLayout.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/view/CatalogLayout.fxml" afterPath="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/view/CatalogLayout.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/target/classes/ru/netcracker/ibublig/client/view/view/AdminLayout.fxml" afterPath="$PROJECT_DIR$/client/target/classes/ru/netcracker/ibublig/client/view/view/AdminLayout.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/target/classes/ru/netcracker/ibublig/client/view/view/CatalogLayout.fxml" afterPath="$PROJECT_DIR$/client/target/classes/ru/netcracker/ibublig/client/view/view/CatalogLayout.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/network/src/main/java/ru/netcracker/ibublig/network/TCPConnection.java" afterPath="$PROJECT_DIR$/network/src/main/java/ru/netcracker/ibublig/network/TCPConnection.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/network/src/main/java/ru/netcracker/ibublig/network/TCPConnectionListener.java" afterPath="$PROJECT_DIR$/network/src/main/java/ru/netcracker/ibublig/network/TCPConnectionListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/MainServer.java" afterPath="$PROJECT_DIR$/server/src/main/java/MainServer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/contrller/ServerController.java" afterPath="$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/contrller/ServerController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/model/UserListWrapper.java" afterPath="$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/model/UserListWrapper.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -51,54 +58,146 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ARController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/controller/ARController.java">
+      <file leaf-file-name="CatalogController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/CatalogController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="34" lean-forward="false" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+            <state relative-caret-position="182">
+              <caret line="113" column="71" lean-forward="false" selection-start-line="113" selection-start-column="71" selection-end-line="113" selection-end-column="71" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#404#405#0" expanded="true" />
-                <element signature="e#447#448#0" expanded="true" />
+                <element signature="e#3672#3673#0" expanded="true" />
+                <element signature="e#3708#3709#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/model/User.java">
+      <file leaf-file-name="MainServer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/MainServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="4" column="41" lean-forward="false" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+            <state relative-caret-position="180">
+              <caret line="52" column="80" lean-forward="true" selection-start-line="52" selection-start-column="80" selection-end-line="52" selection-end-column="80" />
               <folding>
-                <element signature="e#876#877#0" expanded="true" />
-                <element signature="e#908#909#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FXMain.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AuthorizationController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/AuthorizationController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-304">
+              <caret line="39" column="117" lean-forward="false" selection-start-line="39" selection-start-column="117" selection-end-line="39" selection-end-column="117" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ServerController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/contrller/ServerController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="58" column="31" lean-forward="false" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2068#2069#0" expanded="true" />
+                <element signature="e#2101#2102#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TCPConnection.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/network/src/main/java/ru/netcracker/ibublig/network/TCPConnection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2058#2059#0" expanded="true" />
+                <element signature="e#2097#2098#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/AdminController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="251">
+              <caret line="105" column="32" lean-forward="true" selection-start-line="99" selection-start-column="12" selection-end-line="105" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FXMain.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/FXMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="115" column="79" lean-forward="false" selection-start-line="115" selection-start-column="79" selection-end-line="115" selection-end-column="79" />
+            <state relative-caret-position="252">
+              <caret line="155" column="60" lean-forward="false" selection-start-line="155" selection-start-column="52" selection-end-line="155" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1194#1195#0" expanded="true" />
-                <element signature="e#1222#1223#0" expanded="true" />
-                <element signature="e#3569#3570#0" expanded="true" />
-                <element signature="e#3605#3606#0" expanded="true" />
-                <element signature="e#3643#3644#0" expanded="true" />
-                <element signature="e#3678#3679#0" expanded="true" />
-                <element signature="e#3758#3759#0" expanded="true" />
-                <element signature="e#3815#3816#0" expanded="true" />
-                <element signature="e#3951#3952#0" expanded="true" />
-                <element signature="e#4026#4027#0" expanded="true" />
-                <element signature="e#4088#4089#0" expanded="true" />
-                <element signature="e#4175#4176#0" expanded="true" />
-                <element signature="e#4212#4213#0" expanded="true" />
+                <element signature="e#1276#1277#0" expanded="true" />
+                <element signature="e#1307#1308#0" expanded="true" />
+                <element signature="e#1537#1538#0" expanded="true" />
+                <element signature="e#1565#1566#0" expanded="true" />
+                <element signature="e#4421#4422#0" expanded="true" />
+                <element signature="e#4457#4458#0" expanded="true" />
+                <element signature="e#4495#4496#0" expanded="true" />
+                <element signature="e#4530#4531#0" expanded="true" />
+                <element signature="e#4610#4611#0" expanded="true" />
+                <element signature="e#4667#4668#0" expanded="true" />
+                <element signature="e#4943#4944#0" expanded="true" />
+                <element signature="e#5000#5001#0" expanded="true" />
+                <element signature="e#5226#5227#0" expanded="true" />
+                <element signature="e#5307#5308#0" expanded="true" />
+                <element signature="e#5415#5416#0" expanded="true" />
+                <element signature="e#5477#5478#0" expanded="true" />
+                <element signature="e#5564#5565#0" expanded="true" />
+                <element signature="e#5601#5602#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdminEditController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/AdminEditController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="49" column="29" lean-forward="false" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="29" />
+              <folding>
+                <element signature="e#1250#1251#0" expanded="true" />
+                <element signature="e#1285#1286#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CatalogLayout.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/view/CatalogLayout.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Catalog.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/model/Catalog.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -125,12 +224,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/src/main/resources/RootCategory.fxml" />
-        <option value="$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/model/Catalog.java" />
-        <option value="$PROJECT_DIR$/client/src/main/java/Catalog.java" />
-        <option value="$PROJECT_DIR$/client/src/main/resources/Catalog.fxml" />
-        <option value="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/RootLayout.fxml" />
-        <option value="$PROJECT_DIR$/client/pom.xml" />
         <option value="$PROJECT_DIR$/client/target/classes/ru/netcracker/ibublig/client/view/AuthorizationLayout.fxml" />
         <option value="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/AuthorizationLayout.fxml" />
         <option value="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/AdminLayout.fxml" />
@@ -147,32 +240,41 @@
         <option value="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/view/AdminLayout.fxml" />
         <option value="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/util/MD5.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/util/MD5.java" />
-        <option value="$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/contrller/ServerController.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/SampleFileServer.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/SimpleFileServer.java" />
         <option value="$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/model/UserListWripper.java" />
-        <option value="$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/contrller/TestWrapper.java" />
-        <option value="$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/model/User.java" />
         <option value="$PROJECT_DIR$/network/src/main/java/ru/netcracker/ibublig/network/TCPConnectionListener.java" />
-        <option value="$PROJECT_DIR$/server/src/main/java/MainServer.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/model/Usss.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/view/AdminAddItemLayout.fxml" />
         <option value="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/view/AdminEditItemLayout.fxml" />
         <option value="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/AdminEditController.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/model/User.java" />
-        <option value="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/AdminController.java" />
-        <option value="$PROJECT_DIR$/network/src/main/java/ru/netcracker/ibublig/network/TCPConnection.java" />
-        <option value="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/AuthorizationController.java" />
-        <option value="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/CatalogController.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/RegistrationController.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/XML.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/model/CatalogListWrapper.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/model/Category.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/model/Item.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/util/MD5.java" />
-        <option value="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/controller/ARController.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/model/User.java" />
+        <option value="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/controller/ARController.java" />
+        <option value="$PROJECT_DIR$/network/src/main/java/ru/netcracker/ibublig/model/Item.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/model/User.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/model/UserListWrapper.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/model/CategoryListWrapper.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/contrller/TestWrapper.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/contrller/UserWraper.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/contrller/Wrapper.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/contrller/UserWrapper.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/contrller/CategoryWrapper.java" />
+        <option value="$PROJECT_DIR$/network/src/main/java/ru/netcracker/ibublig/model/Category.java" />
+        <option value="$PROJECT_DIR$/network/src/main/java/ru/netcracker/ibublig/network/TCPConnection.java" />
+        <option value="$PROJECT_DIR$/network/src/main/java/ru/netcracker/ibublig/model/User.java" />
+        <option value="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/AdminController.java" />
+        <option value="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/AuthorizationController.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/MainServer.java" />
+        <option value="$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/contrller/ServerController.java" />
         <option value="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/FXMain.java" />
+        <option value="$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/CatalogController.java" />
       </list>
     </option>
   </component>
@@ -336,7 +438,37 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Catalog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Catalog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Catalog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Catalog" type="b2602c69:ProjectViewProjectNode" />
@@ -366,6 +498,24 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ibublig" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Catalog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="network" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ibublig" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Catalog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="network" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ibublig" type="462c0819:PsiDirectoryNode" />
               <item name="network" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -415,15 +565,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Catalog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -612,7 +753,7 @@
       <workItem from="1522956597061" duration="815000" />
       <workItem from="1523184823955" duration="7164000" />
       <workItem from="1523475227636" duration="46414000" />
-      <workItem from="1523690143848" duration="10306000" />
+      <workItem from="1523690143848" duration="34549000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1523554338016</created>
@@ -635,11 +776,18 @@
       <option name="project" value="LOCAL" />
       <updated>1523562597337</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add AdminController and User model">
+      <created>1523782400038</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1523782400038</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160644000" />
+    <option name="totallyTimeSpent" value="184887000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -653,8 +801,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21394612" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296355" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32171157" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -684,7 +832,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update" />
     <MESSAGE value="test Table" />
-    <option name="LAST_COMMIT_MESSAGE" value="test Table" />
+    <MESSAGE value="Add AdminController and User model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add AdminController and User model" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -693,79 +842,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/view/AdminLayout.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="169" lean-forward="false" selection-start-line="9" selection-start-column="169" selection-end-line="9" selection-end-column="169" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/view/CatalogLayout.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/view/AuthorizationLayout.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-56">
-          <caret line="13" column="57" lean-forward="false" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/view/ConsoleLog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="23" lean-forward="false" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/io/File.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="274" column="11" lean-forward="false" selection-start-line="274" selection-start-column="11" selection-end-line="274" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/SimpleFileServer.java" />
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/model/UserListWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/util/MD5.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" column="34" lean-forward="false" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/contrller/TestWrapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="60" column="34" lean-forward="false" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="19" lean-forward="false" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -847,14 +923,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/contrller/ServerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_144/src.zip!/java/security/MessageDigest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2105">
@@ -901,14 +969,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/main/java/MainServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="25" column="59" lean-forward="false" selection-start-line="25" selection-start-column="59" selection-end-line="25" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/view/d.xsl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -939,100 +999,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/AdminEditController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="49" column="29" lean-forward="false" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#588#589#0" expanded="true" />
-            <element signature="e#634#635#0" expanded="true" />
-            <element signature="e#905#906#0" expanded="true" />
-            <element signature="e#937#938#0" expanded="true" />
-            <element signature="e#1250#1251#0" expanded="true" />
-            <element signature="e#1285#1286#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/network/src/main/java/ru/netcracker/ibublig/network/TCPConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-614">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/AdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1890">
-          <caret line="105" column="54" lean-forward="false" selection-start-line="105" selection-start-column="54" selection-end-line="105" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4211#4212#0" expanded="true" />
-            <element signature="e#4247#4248#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/AuthorizationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/CatalogController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="85" column="37" lean-forward="false" selection-start-line="85" selection-start-column="37" selection-end-line="85" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/RegistrationController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="36" column="14" lean-forward="false" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
           <folding>
-            <element signature="e#1179#1180#0" expanded="true" />
+            <element signature="e#1179#1180#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/XML.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="31" column="53" lean-forward="false" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="53" />
-          <folding>
-            <element signature="e#585#586#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/model/Category.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="95" column="16" lean-forward="false" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="16" />
-          <folding>
-            <element signature="e#574#575#0" expanded="true" />
-            <element signature="e#947#948#0" expanded="true" />
-            <element signature="e#2568#2569#0" expanded="true" />
-            <element signature="e#2599#2600#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/model/Item.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="17" column="5" lean-forward="false" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1060,14 +1033,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/model/CatalogListWrapper.java">
+    <entry file="file://$PROJECT_DIR$/network/src/main/java/ru/netcracker/ibublig/network.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="15" column="23" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
           <folding>
-            <element signature="e#273#274#0" expanded="true" />
-            <element signature="e#366#367#0" expanded="true" />
-            <element signature="e#410#411#0" expanded="true" />
+            <element signature="e#876#877#0" expanded="true" />
+            <element signature="e#908#909#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/controller/ARController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+          <folding>
+            <element signature="e#397#398#0" expanded="true" />
+            <element signature="e#440#441#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1080,6 +1071,141 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/model/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="10" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/network/src/main/java/ru/netcracker/ibublig/model/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="4" column="41" lean-forward="false" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+          <folding>
+            <element signature="e#623#624#0" expanded="true" />
+            <element signature="e#650#651#0" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+            <element signature="e#722#723#0" expanded="true" />
+            <element signature="e#760#761#0" expanded="true" />
+            <element signature="e#794#795#0" expanded="true" />
+            <element signature="e#848#849#0" expanded="true" />
+            <element signature="e#894#895#0" expanded="true" />
+            <element signature="e#925#926#0" expanded="true" />
+            <element signature="e#952#953#0" expanded="true" />
+            <element signature="e#992#993#0" expanded="true" />
+            <element signature="e#1024#1025#0" expanded="true" />
+            <element signature="e#1056#1057#0" expanded="true" />
+            <element signature="e#1084#1085#0" expanded="true" />
+            <element signature="e#1126#1127#0" expanded="true" />
+            <element signature="e#1160#1161#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/model/UserListWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="30" lean-forward="true" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#271#272#0" expanded="true" />
+            <element signature="e#299#300#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/model/CatalogListWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="14" column="37" lean-forward="false" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/controller/CatalogController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/contrller/CategoryWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="34" column="51" lean-forward="false" selection-start-line="34" selection-start-column="38" selection-end-line="34" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#484#485#0" expanded="true" />
+            <element signature="e#528#529#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/model/CategoryListWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="43" lean-forward="false" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#330#331#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/contrller/UserWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="93" column="36" lean-forward="true" selection-start-line="93" selection-start-column="36" selection-end-line="93" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/network/src/main/java/ru/netcracker/ibublig/model/Category.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/model/Category.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="95" column="16" lean-forward="false" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2568#2569#0" expanded="true" />
+            <element signature="e#2599#2600#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/network/src/main/java/ru/netcracker/ibublig/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+          <folding>
+            <element signature="e#1719#1720#0" expanded="true" />
+            <element signature="e#1750#1751#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/model/Catalog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -1088,56 +1214,126 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/controller/CatalogController.java">
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/XML.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="125">
+          <caret line="23" column="33" lean-forward="false" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/model/User.java">
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/view/CatalogLayout.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="4" column="41" lean-forward="false" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+        <state relative-caret-position="175">
+          <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/AdminEditController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="49" column="29" lean-forward="false" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="29" />
           <folding>
-            <element signature="e#876#877#0" expanded="true" />
-            <element signature="e#908#909#0" expanded="true" />
+            <element signature="e#1250#1251#0" expanded="true" />
+            <element signature="e#1285#1286#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/controller/ARController.java">
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/AuthorizationController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="34" lean-forward="false" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+        <state relative-caret-position="-304">
+          <caret line="39" column="117" lean-forward="false" selection-start-line="39" selection-start-column="117" selection-end-line="39" selection-end-column="117" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#404#405#0" expanded="true" />
-            <element signature="e#447#448#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/MainServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="52" column="80" lean-forward="true" selection-start-line="52" selection-start-column="80" selection-end-line="52" selection-end-column="80" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/FXMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="115" column="79" lean-forward="false" selection-start-line="115" selection-start-column="79" selection-end-line="115" selection-end-column="79" />
+        <state relative-caret-position="252">
+          <caret line="155" column="60" lean-forward="false" selection-start-line="155" selection-start-column="52" selection-end-line="155" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1194#1195#0" expanded="true" />
-            <element signature="e#1222#1223#0" expanded="true" />
-            <element signature="e#3569#3570#0" expanded="true" />
-            <element signature="e#3605#3606#0" expanded="true" />
-            <element signature="e#3643#3644#0" expanded="true" />
-            <element signature="e#3678#3679#0" expanded="true" />
-            <element signature="e#3758#3759#0" expanded="true" />
-            <element signature="e#3815#3816#0" expanded="true" />
-            <element signature="e#3951#3952#0" expanded="true" />
-            <element signature="e#4026#4027#0" expanded="true" />
-            <element signature="e#4088#4089#0" expanded="true" />
-            <element signature="e#4175#4176#0" expanded="true" />
-            <element signature="e#4212#4213#0" expanded="true" />
+            <element signature="e#1276#1277#0" expanded="true" />
+            <element signature="e#1307#1308#0" expanded="true" />
+            <element signature="e#1537#1538#0" expanded="true" />
+            <element signature="e#1565#1566#0" expanded="true" />
+            <element signature="e#4421#4422#0" expanded="true" />
+            <element signature="e#4457#4458#0" expanded="true" />
+            <element signature="e#4495#4496#0" expanded="true" />
+            <element signature="e#4530#4531#0" expanded="true" />
+            <element signature="e#4610#4611#0" expanded="true" />
+            <element signature="e#4667#4668#0" expanded="true" />
+            <element signature="e#4943#4944#0" expanded="true" />
+            <element signature="e#5000#5001#0" expanded="true" />
+            <element signature="e#5226#5227#0" expanded="true" />
+            <element signature="e#5307#5308#0" expanded="true" />
+            <element signature="e#5415#5416#0" expanded="true" />
+            <element signature="e#5477#5478#0" expanded="true" />
+            <element signature="e#5564#5565#0" expanded="true" />
+            <element signature="e#5601#5602#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/AdminController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="105" column="32" lean-forward="true" selection-start-line="99" selection-start-column="12" selection-end-line="105" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/network/src/main/java/ru/netcracker/ibublig/network/TCPConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2058#2059#0" expanded="true" />
+            <element signature="e#2097#2098#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/main/java/ru/netcracker/ibublig/server/contrller/ServerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="58" column="31" lean-forward="false" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2068#2069#0" expanded="true" />
+            <element signature="e#2101#2102#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/main/java/ru/netcracker/ibublig/client/view/controller/CatalogController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="113" column="71" lean-forward="false" selection-start-line="113" selection-start-column="71" selection-end-line="113" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3672#3673#0" expanded="true" />
+            <element signature="e#3708#3709#0" expanded="true" />
           </folding>
         </state>
       </provider>

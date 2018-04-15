@@ -1,27 +1,25 @@
+import ru.netcracker.ibublig.model.Category;
 import ru.netcracker.ibublig.network.TCPConnection;
 import ru.netcracker.ibublig.network.TCPConnectionListener;
-import ru.netcracker.ibublig.server.contrller.TestWrapper;
-import ru.netcracker.ibublig.server.model.User;
+import ru.netcracker.ibublig.model.User;
+import ru.netcracker.ibublig.server.contrller.ServerController;
 
 import java.io.*;
 import java.net.ServerSocket;
 import java.util.ArrayList;
 
-public class MainServer implements TCPConnectionListener{
+public class MainServer implements TCPConnectionListener {
+    private final ArrayList<TCPConnection> connections = new ArrayList<>();
+    private ServerController serverController = new ServerController();
 
     public static void main(String[] args) {
         new MainServer();
     }
 
-    private final ArrayList<TCPConnection> connections = new ArrayList<>();
-    private ArrayList<User> users;
-    private TestWrapper wrapper;
-    private File usersXML = new File("C:\\Data","test.xml");
-
     private MainServer() {
         System.out.println("Server running...");
-        try(ServerSocket serverSocket = new ServerSocket(8189)) {
-            while(true) {
+        try (ServerSocket serverSocket = new ServerSocket(8189)) {
+            while (true) {
                 try {
                     new TCPConnection(this, serverSocket.accept());
                 } catch (IOException e) {
@@ -40,17 +38,26 @@ public class MainServer implements TCPConnectionListener{
     }
 
     @Override
-    public void onReceiveByte(TCPConnection tcpConnection, InputStream is) {
-        System.out.println("TEST!!!!");
-        try(FileOutputStream os = new FileOutputStream(usersXML)){
-            int i;
-            byte[] bytes = new byte[4096];
-            while ((i = is.read(bytes)) != -1)
-                os.write(bytes,0, i);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+    public void onReceiveByte(TCPConnection tcpConnection, Object object) {
+        if (object instanceof User) {
+            User user = (User) object;
+            if (user.isReg()) {
+                //Зарегистрировать
+                serverController.registrationUser(user);
+            } else {
+                //авторизовать
+                for (int i = 0; i < connections.size(); i++) {
+                    if (connections.get(i).equals(tcpConnection)) {
+                        int id = i;
+                        connections.get(id).sendObject(serverController.authorizationUser(user));
+                        connections.get(id).sendObject(serverController.getCategories());
+                    }
+                }
+            }
+        } else if (object instanceof ArrayList) {
+            ArrayList<Category> category = new ArrayList();
+            category = (ArrayList<Category>) object;
+            serverController.setCategories(category);
         }
     }
 

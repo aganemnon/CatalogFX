@@ -1,6 +1,6 @@
 package ru.netcracker.ibublig.server.contrller;
 
-import ru.netcracker.ibublig.server.model.User;
+import ru.netcracker.ibublig.model.User;
 import ru.netcracker.ibublig.server.model.UserListWrapper;
 
 import javax.xml.bind.JAXBContext;
@@ -10,11 +10,11 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.prefs.Preferences;
 
-public class TestWrapper {
+public class UserWrapper {
 
     private ArrayList<User> users;
 
-    public TestWrapper(ArrayList<User> users){
+    public UserWrapper(ArrayList<User> users){
         this.users = users;
     }
 
@@ -78,7 +78,7 @@ public class TestWrapper {
      * @return
      */
     public File getPersonFilePath() {
-        Preferences prefs = Preferences.userNodeForPackage(TestWrapper.class);
+        Preferences prefs = Preferences.userNodeForPackage(UserWrapper.class);
         String filePath = prefs.get("filePath", null);
         if (filePath != null) {
             return new File(filePath);
@@ -94,7 +94,7 @@ public class TestWrapper {
      * @param file - файл или null, чтобы удалить путь
      */
     public void setPersonFilePath(File file) {
-        Preferences prefs = Preferences.userNodeForPackage(TestWrapper.class);
+        Preferences prefs = Preferences.userNodeForPackage(UserWrapper.class);
         if (file != null) {
             prefs.put("filePath", file.getPath());
         } else {

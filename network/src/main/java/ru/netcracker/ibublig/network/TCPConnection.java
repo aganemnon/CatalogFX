@@ -8,8 +8,8 @@ public class TCPConnection {
     private final Thread rxThread;
     private final TCPConnectionListener eventListener;
 
-    private final OutputStream os;
-    private final InputStream is;
+    private final ObjectOutputStream oos;
+    private final ObjectInputStream ois;
 
     public TCPConnection(TCPConnectionListener eventListener, String ipAddr, int port) throws IOException {
         this(eventListener, new Socket(ipAddr, port));
@@ -19,20 +19,19 @@ public class TCPConnection {
         this.eventListener = eventListener;
         this.socket = socket;
 
-        os = socket.getOutputStream();
-        is = socket.getInputStream();
+        oos = new ObjectOutputStream(socket.getOutputStream());
+        ois = new ObjectInputStream(socket.getInputStream());
 
         rxThread = new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    int c;
                     eventListener.onConnectionReady(TCPConnection.this);
                     while (!rxThread.isInterrupted()) {
-                        eventListener.onReceiveByte(TCPConnection.this, is);
-                        while ((c = is.read()) != -1) {
-                        }
+                        eventListener.onReceiveByte(TCPConnection.this, ois.readObject());
                     }
+                } catch (ClassNotFoundException e) {
+                    eventListener.onException(TCPConnection.this, e);
                 } catch (IOException e) {
                     eventListener.onException(TCPConnection.this, e);
                 } finally {
@@ -52,52 +51,17 @@ public class TCPConnection {
         }
     }
 
-    public synchronized void sendString(String value) {
-        try (BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(os))) {
-            bw.write(value);
-            bw.flush();
-            os.flush();
+    public synchronized void sendObject(Object object) {
+        try {
+            oos.writeObject(object);
+            oos.flush();
         } catch (IOException e) {
             e.printStackTrace();
             disconnect();
         }
     }
-
-    public synchronized void sendFile(File file) {
-        try (InputStream is = new FileInputStream(file)) {
-            int count;
-            byte[] bytes = new byte[4096];
-            while ((count = is.read(bytes)) > 0) {
-                os.write(bytes, 0, count);
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public synchronized void sendTestMessage() {
-        try {
-            os.write(1);
-            os.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public synchronized void sendObject(Object object) {
-        try {
-            ObjectOutputStream oos = new ObjectOutputStream(os);
-            oos.writeObject(object);
-            oos.flush();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void sendAuthorization(String text, String s) {
-        System.out.println(text + " " + s);
+    public int getPort(){
+        return socket.getPort();
     }
 
     @Override
