@@ -38,7 +38,7 @@
           </Menu>
             <Menu mnemonicParsing="false" text="Server">
                <items>
-                  <MenuItem mnemonicParsing="false" text="SaveOnServer" />
+                  <MenuItem mnemonicParsing="false" onAction="#saveOnServer" text="SaveOnServer" />
                </items>
             </Menu>
           <Menu mnemonicParsing="false" text="Help">

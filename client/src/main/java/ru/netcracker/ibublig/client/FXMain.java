@@ -2,12 +2,13 @@ package ru.netcracker.ibublig.client;
 
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import ru.netcracker.ibublig.client.controller.ARController;
+import javafx.stage.WindowEvent;
 import ru.netcracker.ibublig.client.view.controller.CatalogController;
 import ru.netcracker.ibublig.model.Category;
 import ru.netcracker.ibublig.model.User;
@@ -28,7 +29,6 @@ public class FXMain extends Application implements TCPConnectionListener {
     private static final int PORT = 8189;
 
     private TCPConnection tcpConnection;
-    private ARController arController;
     private ArrayList<Category> category;
     private CatalogController catalogController;
     private AuthorizationController authorizationController;
@@ -38,8 +38,6 @@ public class FXMain extends Application implements TCPConnectionListener {
     }
 
     public FXMain() {
-        //userData.add(new User("Илья","Сиротин", true, "admin", "1234"));
-        //userData.add(new User("Не Илья","Сиротин", false, "noadmin","3214"));
     }
 
     public static void main(String[] args) {
@@ -50,6 +48,13 @@ public class FXMain extends Application implements TCPConnectionListener {
     public void start(Stage primaryStage) throws Exception {
         this.primaryStage = primaryStage;
         this.primaryStage.setTitle("CatalogFX");
+        this.primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent event) {
+                Platform.exit();
+                System.exit(0);
+            }
+        });
 
         try {
             tcpConnection = new TCPConnection(this, IP_ADDRESS, PORT);

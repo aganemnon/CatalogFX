@@ -75,7 +75,8 @@ public class CatalogController {
                 loader.setLocation(fxMain.getClass().getResource("view/view/AdminLayout.fxml"));
                 Scene scene = new Scene((AnchorPane) loader.load());
                 AdminController controller = loader.getController();
-                controller.getMain(fxMain);
+                controller.setMain(fxMain);
+                controller.setCategories(categories);
                 fxMain.getPrimaryStage().setScene(scene);
                 fxMain.getPrimaryStage().show();
             } catch (IOException e) {
