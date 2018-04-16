@@ -36,23 +36,7 @@ public class AdminController {
 
     @FXML
     public void initialize() {
-        listView.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                categoryNameTableColumn.setCellValueFactory(param -> param.getValue().nameProperty());
-                categoryDescriptionTableColumn.setCellValueFactory(param -> param.getValue().descriptionProperty());
-                categoryCostTableColumn.setCellValueFactory(param -> param.getValue().costProperty());
-                categoryCountTableColumn.setCellValueFactory(param -> param.getValue().countProperty());
-                if (!categories.isEmpty() && (categories.get(newValue.intValue()).getSize() != 0)) {
-                    categoryTableView.setItems(categories.get(newValue.intValue()).getItems());
-                }
-            }
-        });
 
-        for (int i = 0; i < categories.size(); i++) {
-            categoryName.add(categories.get(i).getName());
-        }
-        listView.setItems(categoryName);
     }
 
     @FXML
@@ -127,7 +111,23 @@ public class AdminController {
 
     public void setCategories(ObservableList<Category> categories){
         this.categories = categories;
-        initialize();
+        listView.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                categoryNameTableColumn.setCellValueFactory(param -> param.getValue().nameProperty());
+                categoryDescriptionTableColumn.setCellValueFactory(param -> param.getValue().descriptionProperty());
+                categoryCostTableColumn.setCellValueFactory(param -> param.getValue().costProperty());
+                categoryCountTableColumn.setCellValueFactory(param -> param.getValue().countProperty());
+                if (!categories.isEmpty() && (categories.get(newValue.intValue()).getSize() != 0)) {
+                    categoryTableView.setItems(categories.get(newValue.intValue()).getItems());
+                }
+            }
+        });
+
+        for (int i = 0; i < categories.size(); i++) {
+            categoryName.add(categories.get(i).getName());
+        }
+        listView.setItems(categoryName);
     }
 
     public void setMain(FXMain fxMain) {

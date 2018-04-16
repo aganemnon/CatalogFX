@@ -44,26 +44,6 @@ public class CatalogController {
 
     @FXML
     private void initialize() {
-        listView.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                categoryNameTableColumn.setCellValueFactory(param -> param.getValue().nameProperty());
-                categoryDescriptionTableColumn.setCellValueFactory(param -> param.getValue().descriptionProperty());
-                categoryCostTableColumn.setCellValueFactory(param -> param.getValue().costProperty());
-                categoryCountTableColumn.setCellValueFactory(param -> param.getValue().countProperty());
-                if (!categories.isEmpty() && (categories.get(newValue.intValue()).getSize() != 0)) {
-                    categoryTableView.setItems(categories.get(newValue.intValue()).getItems());
-                }
-            }
-        });
-
-        final ObservableList<String> listViewNameCategory = FXCollections.observableArrayList();
-
-        for (int i = 0; i < categories.size(); i++) {
-            listViewNameCategory.add(categories.get(i).getName());
-        }
-
-        listView.setItems(listViewNameCategory);
     }
 
     @FXML
@@ -103,30 +83,37 @@ public class CatalogController {
     }
 
     public void setCategories(ArrayList<ru.netcracker.ibublig.model.Category> category) {
-        ObservableList<Item> items = FXCollections.observableArrayList();
         for (int i = 0; i < category.size(); i++) {
+            ObservableList<Item> items = FXCollections.observableArrayList();
             for (int j = 0; j < category.get(i).getItems().size(); j++) {
-                items.add(new Item(category.get(i).getItems().get(j).getName(),
+                items.add(new Item(
+                        category.get(i).getItems().get(j).getName(),
                         category.get(i).getItems().get(j).getDescription(),
                         category.get(i).getItems().get(j).getCost(),
-                        category.get(i).getItems().get(j).getCount()));
+                        category.get(i).getItems().get(j).getCount()
+                ));
             }
             categories.add(new Category(category.get(i).getNameCategory(),items));
         }
-        initialize();
-    }
+        listView.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                categoryNameTableColumn.setCellValueFactory(param -> param.getValue().nameProperty());
+                categoryDescriptionTableColumn.setCellValueFactory(param -> param.getValue().descriptionProperty());
+                categoryCostTableColumn.setCellValueFactory(param -> param.getValue().costProperty());
+                categoryCountTableColumn.setCellValueFactory(param -> param.getValue().countProperty());
+                if (!categories.isEmpty() && (categories.get(newValue.intValue()).getSize() != 0)) {
+                    categoryTableView.setItems(categories.get(newValue.intValue()).getItems());
+                }
+            }
+        });
 
-    private void testData() {
-        Category telephone = new Category("Телефон");
-        telephone.addItems(new Item("Samsung Galaxy J1", "Супер телефон 1", "1000", "5"));
-        telephone.addItems(new Item("Samsung Galaxy J3", "Супер телефон 2", "1000", "5"));
-        telephone.addItems(new Item("Samsung Galaxy J5", "Супер телефон 3", "1000", "5"));
-        telephone.addItems(new Item("Samsung Galaxy J7", "Супер телефон 4", "1000", "5"));
-        telephone.addItems(new Item("Ифон С15", "Какое то описание", "1000000", "5"));
-        categories.add(telephone);
+        final ObservableList<String> listViewNameCategory = FXCollections.observableArrayList();
 
-        Category notebook = new Category("Ноутбук");
-        notebook.addItems(new Item("Acer", "laptop", "15", "35"));
-        categories.add(notebook);
+        for (int i = 0; i < categories.size(); i++) {
+            listViewNameCategory.add(categories.get(i).getName());
+        }
+
+        listView.setItems(listViewNameCategory);
     }
 }
