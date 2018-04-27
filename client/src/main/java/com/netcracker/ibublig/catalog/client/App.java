@@ -1,13 +1,17 @@
 package com.netcracker.ibublig.catalog.client;
 
+import com.netcracker.ibublig.catalog.model.User;
+
 /**
  * Hello world!
  *
  */
 public class App 
 {
+    private static User user = new User();
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        user.setFirstName("Илья");
+        System.out.println(user.getFirstName());
     }
 }
