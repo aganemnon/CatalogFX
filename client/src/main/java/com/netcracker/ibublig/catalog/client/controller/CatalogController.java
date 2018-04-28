@@ -82,20 +82,7 @@ public class CatalogController {
         this.user = user;
         welcome.setText("Добро пожаловать, " + user.getFirstName() + " " + user.getLastName());
     }
-
-    public void setCategories(ArrayList<com.netcracker.ibublig.catalog.model.Category> category) {
-        for (int i = 0; i < category.size(); i++) {
-            ObservableList<Item> items = FXCollections.observableArrayList();
-            for (int j = 0; j < category.get(i).getItems().size(); j++) {
-                items.add(new Item(
-                        category.get(i).getItems().get(j).getName(),
-                        category.get(i).getItems().get(j).getDescription(),
-                        category.get(i).getItems().get(j).getCost(),
-                        category.get(i).getItems().get(j).getCount()
-                ));
-            }
-            categories.add(new Category(category.get(i).getNameCategory(),items));
-        }
+    public void showCatalog(){
         listView.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
@@ -114,7 +101,26 @@ public class CatalogController {
         for (int i = 0; i < categories.size(); i++) {
             listViewNameCategory.add(categories.get(i).getName());
         }
-
         listView.setItems(listViewNameCategory);
+    }
+    public void setCategories(ObservableList<Category> categories){
+        this.categories = categories;
+        showCatalog();
+
+    }
+    public void setCategories(ArrayList<com.netcracker.ibublig.catalog.model.Category> category) {
+        for (int i = 0; i < category.size(); i++) {
+            ObservableList<Item> items = FXCollections.observableArrayList();
+            for (int j = 0; j < category.get(i).getItems().size(); j++) {
+                items.add(new Item(
+                        category.get(i).getItems().get(j).getName(),
+                        category.get(i).getItems().get(j).getDescription(),
+                        category.get(i).getItems().get(j).getCost(),
+                        category.get(i).getItems().get(j).getCount()
+                ));
+            }
+            categories.add(new Category(category.get(i).getNameCategory(),items));
+        }
+        showCatalog();
     }
 }

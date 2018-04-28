@@ -11,8 +11,8 @@ public class Item {
     private StringProperty count;
 
     public Item() {
-        name = new SimpleStringProperty("test");
-        description = new SimpleStringProperty("test");
+        name = new SimpleStringProperty("showCatalog");
+        description = new SimpleStringProperty("showCatalog");
         cost = new SimpleStringProperty("1");
         count = new SimpleStringProperty("2");
     }

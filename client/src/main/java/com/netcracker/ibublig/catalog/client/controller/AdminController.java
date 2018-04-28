@@ -165,7 +165,7 @@ public class AdminController {
     @FXML
     private void buttonExit(){
         fxMain.showCatalog(fxMain.getUser());
-        fxMain.getCatalogController().setCategories(fxMain.getCategory());
+        fxMain.getCatalogController().setCategories(categories);
     }
 
     @FXML

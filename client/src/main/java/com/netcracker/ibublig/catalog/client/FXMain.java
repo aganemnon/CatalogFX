@@ -5,6 +5,7 @@ import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -81,9 +82,10 @@ public class FXMain extends Application implements TCPConnectionListener {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(FXMain.class.getResource("view/AuthorizationLayout.fxml"));
             AnchorPane root = (AnchorPane) loader.load();
+            Scene scene = new Scene(root);
             authorizationController = loader.getController();
             authorizationController.setMainApp(this);
-            Scene scene = new Scene(root);
+
             primaryStage.setScene(scene);
             primaryStage.show();
 

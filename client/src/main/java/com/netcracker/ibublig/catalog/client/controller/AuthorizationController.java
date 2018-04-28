@@ -3,6 +3,7 @@ package com.netcracker.ibublig.catalog.client.controller;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -21,8 +22,11 @@ public class AuthorizationController {
     private PasswordField passwordField;
     @FXML
     private Label errorPassword;
+    @FXML
+    private Button auth;
 
     private AnchorPane registrationLayout;
+    private Scene scene;
 
     private FXMain fxMain;
     private TCPConnection tcpConnection;

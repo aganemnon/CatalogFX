@@ -11,7 +11,7 @@ public class Category {
     private ObservableList<Item> items;
 
     public Category() {
-        name = new SimpleStringProperty("test");
+        name = new SimpleStringProperty("showCatalog");
         ObservableList<Item> newItem = FXCollections.observableArrayList();
         items = newItem;
     }
