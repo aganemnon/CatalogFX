@@ -1,9 +1,9 @@
-package ru.netcracker.ibublig.client.view.controller;
+package com.netcracker.ibublig.catalog.client.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import ru.netcracker.ibublig.client.view.model.Category;
+import com.netcracker.ibublig.catalog.client.model.Category;
 
 public class AdminEditCategoryController {
     @FXML

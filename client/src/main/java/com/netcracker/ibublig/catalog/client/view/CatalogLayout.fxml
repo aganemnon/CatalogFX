@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.netcracker.ibublig.client.view.controller.CatalogController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.netcracker.ibublig.catalog.client.controller.CatalogController">
    <children>
       <Button layoutX="534.0" layoutY="361.0" mnemonicParsing="false" onAction="#admin" text="Admin" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
       <ListView fx:id="listView" layoutX="14.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="395.0" AnchorPane.topAnchor="40.0" />

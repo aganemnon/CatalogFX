@@ -1,10 +1,10 @@
-package ru.netcracker.ibublig.client.view.controller;
+package com.netcracker.ibublig.catalog.client.controller;
 
+import com.netcracker.ibublig.catalog.model.User;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import ru.netcracker.ibublig.client.FXMain;
-import ru.netcracker.ibublig.client.view.model.User;
+import com.netcracker.ibublig.catalog.client.FXMain;
 
 public class RegistrationController {
 
@@ -34,7 +34,7 @@ public class RegistrationController {
         if (password.getText().equals(confirmPassword.getText())) {
             String truePassword;
             truePassword = password.getText();
-            fxMain.getTcpConnection().sendObject(new ru.netcracker.ibublig.model.User(firstName.getText(),lastName.getText(),login.getText(),truePassword,false));
+            fxMain.getTcpConnection().sendObject(new User(firstName.getText(),lastName.getText(),login.getText(),truePassword,false));
             fxMain.initAuthorization();
         } else {
             errorPassword.setText("Введеный вами пароль не совпадает!!!");

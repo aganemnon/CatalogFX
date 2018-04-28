@@ -1,4 +1,4 @@
-package ru.netcracker.ibublig.client.view.controller;
+package com.netcracker.ibublig.catalog.client.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,9 +7,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import ru.netcracker.ibublig.client.FXMain;
-import ru.netcracker.ibublig.model.User;
-import ru.netcracker.ibublig.network.TCPConnection;
+import com.netcracker.ibublig.catalog.client.FXMain;
+import com.netcracker.ibublig.catalog.model.User;
+import com.netcracker.ibublig.catalog.network.TCPConnection;
 
 import java.io.IOException;
 
@@ -41,7 +41,7 @@ public class AuthorizationController {
     private void registration() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(fxMain.getClass().getResource("view/view/RegistrationLayout.fxml"));
+            loader.setLocation(fxMain.getClass().getResource("view/RegistrationLayout.fxml"));
             registrationLayout = (AnchorPane) loader.load();
 
             RegistrationController controller = loader.getController();
@@ -55,7 +55,7 @@ public class AuthorizationController {
             e.printStackTrace();
         }
 
-        System.out.println("Регистрация");
+        fxMain.rootLogger.info("Регистрация");
     }
 
     public void setErrorPassword() {
@@ -68,7 +68,7 @@ public class AuthorizationController {
      */
     @FXML
     private void initialize() {
-        System.out.println("Авторизация");
+        fxMain.rootLogger.info("Авторизация");
     }
 
     public void setMainApp(FXMain fxMain) {

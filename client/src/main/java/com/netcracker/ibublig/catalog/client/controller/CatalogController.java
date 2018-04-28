@@ -1,4 +1,4 @@
-package ru.netcracker.ibublig.client.view.controller;
+package com.netcracker.ibublig.catalog.client.controller;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -9,10 +9,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
-import ru.netcracker.ibublig.client.FXMain;
-import ru.netcracker.ibublig.client.view.model.Category;
-import ru.netcracker.ibublig.client.view.model.Item;
-import ru.netcracker.ibublig.model.User;
+import com.netcracker.ibublig.catalog.client.FXMain;
+import com.netcracker.ibublig.catalog.client.model.Category;
+import com.netcracker.ibublig.catalog.client.model.Item;
+import com.netcracker.ibublig.catalog.model.User;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -50,9 +50,9 @@ public class CatalogController {
     private void admin() {
         if (user.isAdmin()) {
             try {
-                System.out.println("Вход в админ панель");
+                fxMain.rootLogger.info("Вход в админ панель");
                 FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(fxMain.getClass().getResource("view/view/AdminLayout.fxml"));
+                loader.setLocation(fxMain.getClass().getResource("view/AdminLayout.fxml"));
                 Scene scene = new Scene((AnchorPane) loader.load());
                 AdminController controller = loader.getController();
                 controller.setMain(fxMain);
@@ -65,6 +65,7 @@ public class CatalogController {
         } else {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.initOwner(fxMain.getPrimaryStage());
+            fxMain.rootLogger.error("Доступ запрещен");
             alert.setTitle("Доступ запрещен");
             alert.setHeaderText("Вы не имеете права администратора");
             alert.setContentText("Закройте и не приходите сюда больше");
@@ -82,7 +83,7 @@ public class CatalogController {
         welcome.setText("Добро пожаловать, " + user.getFirstName() + " " + user.getLastName());
     }
 
-    public void setCategories(ArrayList<ru.netcracker.ibublig.model.Category> category) {
+    public void setCategories(ArrayList<com.netcracker.ibublig.catalog.model.Category> category) {
         for (int i = 0; i < category.size(); i++) {
             ObservableList<Item> items = FXCollections.observableArrayList();
             for (int j = 0; j < category.get(i).getItems().size(); j++) {

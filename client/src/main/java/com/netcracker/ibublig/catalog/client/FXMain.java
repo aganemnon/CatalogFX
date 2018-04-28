@@ -1,4 +1,4 @@
-package ru.netcracker.ibublig.client;
+package com.netcracker.ibublig.catalog.client;
 
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -9,20 +9,27 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import ru.netcracker.ibublig.client.view.controller.AdminEditCategoryController;
-import ru.netcracker.ibublig.client.view.controller.CatalogController;
-import ru.netcracker.ibublig.model.Category;
-import ru.netcracker.ibublig.model.User;
-import ru.netcracker.ibublig.client.view.controller.AdminEditController;
-import ru.netcracker.ibublig.client.view.controller.AuthorizationController;
-import ru.netcracker.ibublig.client.view.model.Item;
-import ru.netcracker.ibublig.network.TCPConnection;
-import ru.netcracker.ibublig.network.TCPConnectionListener;
+import com.netcracker.ibublig.catalog.client.controller.AdminEditCategoryController;
+import com.netcracker.ibublig.catalog.client.controller.AdminEditController;
+import com.netcracker.ibublig.catalog.client.controller.AuthorizationController;
+import com.netcracker.ibublig.catalog.client.controller.CatalogController;
+import com.netcracker.ibublig.catalog.client.model.Item;
+import com.netcracker.ibublig.catalog.model.Category;
+import com.netcracker.ibublig.catalog.model.User;
+import com.netcracker.ibublig.catalog.network.TCPConnection;
+import com.netcracker.ibublig.catalog.network.TCPConnectionListener;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import java.io.*;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class FXMain extends Application implements TCPConnectionListener {
+
+    public static final Logger rootLogger = LogManager.getRootLogger();
+    static final Logger userLogger = LogManager.getLogger(FXMain.class);
+
+
 
     private Stage primaryStage;
 
@@ -70,7 +77,7 @@ public class FXMain extends Application implements TCPConnectionListener {
         try {
             // Загружаем стартовый макет
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(FXMain.class.getResource("view/view/AuthorizationLayout.fxml"));
+            loader.setLocation(FXMain.class.getResource("view/AuthorizationLayout.fxml"));
             AnchorPane root = (AnchorPane) loader.load();
             authorizationController = loader.getController();
             authorizationController.setMainApp(this);
@@ -88,7 +95,7 @@ public class FXMain extends Application implements TCPConnectionListener {
             // Загружаем fxml-файл и создаём новую сцену
             // для всплывающего диалогового окна.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(FXMain.class.getResource("view/view/AdminEditItemLayout.fxml"));
+            loader.setLocation(FXMain.class.getResource("view/AdminEditItemLayout.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
 
             // Создаём диалоговое окно Stage.
@@ -113,12 +120,12 @@ public class FXMain extends Application implements TCPConnectionListener {
             return false;
         }
     }
-    public boolean showCategoryEditDialog(ru.netcracker.ibublig.client.view.model.Category category) {
+    public boolean showCategoryEditDialog(com.netcracker.ibublig.catalog.client.model.Category category) {
         try {
             // Загружаем fxml-файл и создаём новую сцену
             // для всплывающего диалогового окна.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(FXMain.class.getResource("view/view/AdminEditCategoryLayout.fxml"));
+            loader.setLocation(FXMain.class.getResource("view/AdminEditCategoryLayout.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
 
             // Создаём диалоговое окно Stage.
@@ -145,9 +152,9 @@ public class FXMain extends Application implements TCPConnectionListener {
     }
     public void showCatalog(User user){
         try {
-            System.out.println("Успешная авторизация!!!");
+            rootLogger.info("успешная авторизация");
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(FXMain.class.getResource("view/view/CatalogLayout.fxml"));
+            loader.setLocation(FXMain.class.getResource("view/CatalogLayout.fxml"));
             Scene scene = new Scene((AnchorPane) loader.load());
             catalogController = loader.getController();
 
@@ -172,13 +179,13 @@ public class FXMain extends Application implements TCPConnectionListener {
 
     @Override
     public void onConnectionReady(TCPConnection tcpConnection) {
-        System.out.println("Connection ready...");
+        rootLogger.info("Connection ready...");
     }
 
     @Override
     public void onReceiveByte(TCPConnection tcpConnection, Object object) {
         if (object instanceof User){
-            User user = (User) object;
+            final User user = (User) object;
             if(user.getLogin().equals("")){
                 Platform.runLater(new Runnable() {
                     @Override
@@ -208,7 +215,7 @@ public class FXMain extends Application implements TCPConnectionListener {
 
     @Override
     public void onDisconnect(TCPConnection tcpConnection) {
-        System.out.println("Connection disconnect...");
+        rootLogger.info("Connection disconnect...");
     }
 
     @Override

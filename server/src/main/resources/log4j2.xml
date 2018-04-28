@@ -8,7 +8,7 @@
     </Appenders>
 
     <Loggers>
-        <Logger name= "com.netcracker.ibublig.catalog.client.FXMain" level="debug" additivity="true">
+        <Logger name= "com.netcracker.ibublig.server.MainServer" level="debug" additivity="true">
             <AppenderRef ref="Console"/>
         </Logger>
 

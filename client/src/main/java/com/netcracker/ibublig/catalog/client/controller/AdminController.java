@@ -1,4 +1,4 @@
-package ru.netcracker.ibublig.client.view.controller;
+package com.netcracker.ibublig.catalog.client.controller;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -9,9 +9,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import ru.netcracker.ibublig.client.FXMain;
-import ru.netcracker.ibublig.client.view.model.Category;
-import ru.netcracker.ibublig.client.view.model.Item;
+import com.netcracker.ibublig.catalog.client.FXMain;
+import com.netcracker.ibublig.catalog.client.model.Category;
+import com.netcracker.ibublig.catalog.client.model.Item;
 
 import java.util.ArrayList;
 
@@ -124,18 +124,18 @@ public class AdminController {
 
     @FXML
     private void saveOnServer() {
-        ArrayList<ru.netcracker.ibublig.model.Category> categories = new ArrayList<>();
+        ArrayList<com.netcracker.ibublig.catalog.model.Category> categories = new ArrayList<>();
         for (Category category : this.categories) {
-            ArrayList<ru.netcracker.ibublig.model.Item> items = new ArrayList<>();
+            ArrayList<com.netcracker.ibublig.catalog.model.Item> items = new ArrayList<>();
             for (int j = 0; j < category.getItems().size(); j++) {
                 Item newItem = category.getItems().get(j);
-                items.add(new ru.netcracker.ibublig.model.Item(
+                items.add(new com.netcracker.ibublig.catalog.model.Item(
                         newItem.getName(),
                         newItem.getDescription(),
                         newItem.getCost(),
                         newItem.getCount()));
             }
-            categories.add(new ru.netcracker.ibublig.model.Category(items, category.getName()));
+            categories.add(new com.netcracker.ibublig.catalog.model.Category(items, category.getName()));
         }
         fxMain.getTcpConnection().sendObject(categories);
     }

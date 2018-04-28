@@ -5,12 +5,16 @@ import com.netcracker.ibublig.catalog.model.User;
 import com.netcracker.ibublig.catalog.network.TCPConnection;
 import com.netcracker.ibublig.catalog.network.TCPConnectionListener;
 import com.netcracker.ibublig.server.controller.ServerController;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.util.ArrayList;
 
 public class MainServer implements TCPConnectionListener {
+    public static final Logger rootLogger = LogManager.getRootLogger();
+
     private final ArrayList<TCPConnection> connections = new ArrayList<>();
     private ServerController serverController = new ServerController();
 
@@ -19,13 +23,13 @@ public class MainServer implements TCPConnectionListener {
     }
 
     private MainServer() {
-        System.out.println("Server running...");
+        rootLogger.info("Server running...");
         try (ServerSocket serverSocket = new ServerSocket(8189)) {
             while (true) {
                 try {
                     new TCPConnection(this, serverSocket.accept());
                 } catch (IOException e) {
-                    System.out.println("TCPConnection exception: " + e);
+                    rootLogger.error("TCPConnection exception: " + e);
                 }
             }
         } catch (IOException e) {
@@ -36,7 +40,7 @@ public class MainServer implements TCPConnectionListener {
     @Override
     public void onConnectionReady(TCPConnection tcpConnection) {
         connections.add(tcpConnection);
-        System.out.println("Connect " + tcpConnection);
+        rootLogger.info("User connect: " + tcpConnection);
     }
 
     @Override
@@ -68,11 +72,11 @@ public class MainServer implements TCPConnectionListener {
     @Override
     public void onDisconnect(TCPConnection tcpConnection) {
         connections.remove(tcpConnection);
-        System.out.println("Disconnect: " + tcpConnection);
+        rootLogger.info("User disconnect: " + tcpConnection);
     }
 
     @Override
     public void onException(TCPConnection tcpConnection, Exception e) {
-        System.out.println("TCPConnection exception: " + e);
+        rootLogger.info("TCPConnection exception: " + e);
     }
 }

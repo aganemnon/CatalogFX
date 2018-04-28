@@ -1,6 +1,7 @@
 package com.netcracker.ibublig.server.controller;
 
 import com.netcracker.ibublig.catalog.model.Category;
+import com.netcracker.ibublig.server.MainServer;
 import com.netcracker.ibublig.server.model.CategoryListWrapper;
 
 import javax.xml.bind.JAXBContext;
@@ -38,7 +39,7 @@ public class CategoryWrapper {
             setPersonFilePath(file);
 
         } catch (Exception e) { // catches ANY exception
-            System.out.println("Error " + e);
+            MainServer.rootLogger.error("Error: " + e);
         }
     }
 
@@ -64,7 +65,7 @@ public class CategoryWrapper {
             // Сохраняем путь к файлу в реестре.
             setPersonFilePath(file);
         } catch (Exception e) { // catches ANY exception
-            System.out.println("Error " + e);
+            MainServer.rootLogger.error("Error: " + e);
         }
     }
 

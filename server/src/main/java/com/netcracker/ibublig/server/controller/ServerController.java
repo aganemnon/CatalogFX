@@ -2,6 +2,7 @@ package com.netcracker.ibublig.server.controller;
 
 import com.netcracker.ibublig.catalog.model.Category;
 import com.netcracker.ibublig.catalog.model.User;
+import com.netcracker.ibublig.server.MainServer;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -27,13 +28,7 @@ public class ServerController {
 
         categoryWrapper.loadPersonDataFromFile(catalogFile);
         userWrapper.loadPersonDataFromFile(fileUsers);
-
-        //users.add(new User("Ilya","Sirotin","admin","qwerty",true));
-        //users.add(new User("Dydya","Pupkin","dyadya","fsdfdf",false));
-        //users.add(new User("Chel","Василий","chel","fllflflf",false));
-        //userWrapper.savePersonDataToFile(fileUsers);
-
-        System.out.println("Число загруженых юзеров " + users.size());
+        MainServer.rootLogger.info("Число загруженых пользователей: " + users.size());
     }
 
     public void registrationUser(User user){
@@ -47,7 +42,7 @@ public class ServerController {
             if (users.get(i).getLogin().equals(user.getLogin())){
                 int idUser = i;
                 if (    users.get(idUser).getPassword().equals(user.getPassword())){
-                    System.out.println("Успешная авторизация: " + user.getLogin());
+                    MainServer.rootLogger.info("Успешная авторизация: " + user.getLogin());
                     User userSend;
                     userSend = users.get(idUser);
                     return userSend;
