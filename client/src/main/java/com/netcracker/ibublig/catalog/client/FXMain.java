@@ -29,8 +29,6 @@ public class FXMain extends Application implements TCPConnectionListener {
     public static final Logger rootLogger = LogManager.getRootLogger();
     static final Logger userLogger = LogManager.getLogger(FXMain.class);
 
-
-
     private Stage primaryStage;
 
     private static final String IP_ADDRESS = "127.0.0.1";
@@ -40,6 +38,7 @@ public class FXMain extends Application implements TCPConnectionListener {
     private ArrayList<Category> category;
     private CatalogController catalogController;
     private AuthorizationController authorizationController;
+    private User user;
 
     public ArrayList<Category> getCategory() {
         return category;
@@ -72,6 +71,9 @@ public class FXMain extends Application implements TCPConnectionListener {
         }
     }
 
+    public User getUser() {
+        return user;
+    }
 
     public void initAuthorization() {
         try {
@@ -120,6 +122,12 @@ public class FXMain extends Application implements TCPConnectionListener {
             return false;
         }
     }
+
+    public CatalogController getCatalogController() {
+        return catalogController;
+    }
+
+
     public boolean showCategoryEditDialog(com.netcracker.ibublig.catalog.client.model.Category category) {
         try {
             // Загружаем fxml-файл и создаём новую сцену
@@ -152,7 +160,6 @@ public class FXMain extends Application implements TCPConnectionListener {
     }
     public void showCatalog(User user){
         try {
-            rootLogger.info("успешная авторизация");
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(FXMain.class.getResource("view/CatalogLayout.fxml"));
             Scene scene = new Scene((AnchorPane) loader.load());
@@ -185,7 +192,7 @@ public class FXMain extends Application implements TCPConnectionListener {
     @Override
     public void onReceiveByte(TCPConnection tcpConnection, Object object) {
         if (object instanceof User){
-            final User user = (User) object;
+            user = (User) object;
             if(user.getLogin().equals("")){
                 Platform.runLater(new Runnable() {
                     @Override
@@ -197,6 +204,7 @@ public class FXMain extends Application implements TCPConnectionListener {
                 Platform.runLater(new Runnable() {
                     @Override
                     public void run() {
+                        rootLogger.info("успешная авторизация");
                         showCatalog(user);
                     }
                 });

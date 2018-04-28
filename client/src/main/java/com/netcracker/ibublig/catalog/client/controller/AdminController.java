@@ -12,7 +12,9 @@ import javafx.scene.control.TableView;
 import com.netcracker.ibublig.catalog.client.FXMain;
 import com.netcracker.ibublig.catalog.client.model.Category;
 import com.netcracker.ibublig.catalog.client.model.Item;
+import javafx.stage.FileChooser;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class AdminController {
@@ -158,11 +160,24 @@ public class AdminController {
                 }
             }
         });
-
-
         refreshCategory();
-
     }
+    @FXML
+    private void buttonExit(){
+        fxMain.showCatalog(fxMain.getUser());
+        fxMain.getCatalogController().setCategories(fxMain.getCategory());
+    }
+
+    @FXML
+    private void handleAbout() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("JFXCatalog");
+        alert.setHeaderText("About");
+        alert.setContentText("Author: Ilya Sirotin\nWebsite: https://google.com/");
+
+        alert.showAndWait();
+    }
+
 
     public void setMain(FXMain fxMain) {
         this.fxMain = fxMain;
