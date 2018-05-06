@@ -5,6 +5,7 @@ import com.netcracker.ibublig.catalog.model.User;
 import com.netcracker.ibublig.server.MainServer;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class ServerController {
@@ -25,9 +26,28 @@ public class ServerController {
     public ServerController() {
         categoryWrapper = new CategoryWrapper(categories);
         userWrapper = new UserWrapper(users);
-
-        categoryWrapper.loadPersonDataFromFile(catalogFile);
-        userWrapper.loadPersonDataFromFile(fileUsers);
+        if (catalogFile.exists()){
+            categoryWrapper.loadPersonDataFromFile(catalogFile);
+        } else {
+            try {
+                catalogFile.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            categoryWrapper.savePersonDataToFile(catalogFile);
+            categoryWrapper.loadPersonDataFromFile(catalogFile);
+        }
+        if (fileUsers.exists()){
+            userWrapper.loadPersonDataFromFile(fileUsers);
+        } else{
+            try {
+                fileUsers.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            userWrapper.savePersonDataToFile(fileUsers);
+            userWrapper.loadPersonDataFromFile(fileUsers);
+        }
         MainServer.rootLogger.info("Число загруженых пользователей: " + users.size());
     }
 

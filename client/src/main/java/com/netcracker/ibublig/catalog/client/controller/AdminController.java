@@ -92,11 +92,23 @@ public class AdminController {
     @FXML
     private void addItem() {
         Item item = new Item();
-        boolean okClicked = fxMain.showItemEditDialog(item);
-        if (okClicked) {
-            categories.get(listView.getSelectionModel().getSelectedIndex()).addItems(item);
-            refreshCategory();
+        if (!listView.isFocused()) {
+            boolean okClicked = fxMain.showItemEditDialog(item);
+            if (okClicked) {
+                categories.get(listView.getSelectionModel().getSelectedIndex()).addItems(item);
+                refreshCategory();
+            }
+        } else {
+            // Ничего не выбрано.
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.initOwner(fxMain.getPrimaryStage());
+            alert.setTitle("No Selection");
+            alert.setHeaderText("No category Selected");
+            alert.setContentText("Please select a category in the table.");
+
+            alert.showAndWait();
         }
+
     }
 
     @FXML
@@ -162,8 +174,9 @@ public class AdminController {
         });
         refreshCategory();
     }
+
     @FXML
-    private void buttonExit(){
+    private void buttonExit() {
         fxMain.showCatalog(fxMain.getUser());
         fxMain.getCatalogController().setCategories(categories);
     }

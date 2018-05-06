@@ -1,6 +1,7 @@
 package com.netcracker.ibublig.catalog.client.controller;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import com.netcracker.ibublig.catalog.client.model.Category;
@@ -33,9 +34,18 @@ public class AdminEditCategoryController {
 
     @FXML
     private void handleOk() {
-        category.setName(name.getText());
-        okClicked = true;
-        dialogStage.close();
+        if (name.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Error");
+            alert.setHeaderText("Имя категории пустое");
+            alert.setContentText("Так делать нельзя");
+
+            alert.showAndWait();
+        } else {
+            category.setName(name.getText());
+            okClicked = true;
+            dialogStage.close();
+        }
     }
 
     @FXML
