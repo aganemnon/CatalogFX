@@ -52,7 +52,7 @@ public class CatalogController {
             try {
                 fxMain.rootLogger.info("Вход в админ панель");
                 FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(fxMain.getClass().getResource("view/AdminLayout.fxml"));
+                loader.setLocation(fxMain.getClass().getResource("/view/AdminLayout.fxml"));
                 Scene scene = new Scene((AnchorPane) loader.load());
                 AdminController controller = loader.getController();
                 controller.setMain(fxMain);

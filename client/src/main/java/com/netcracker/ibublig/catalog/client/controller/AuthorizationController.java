@@ -45,7 +45,7 @@ public class AuthorizationController {
     private void registration() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(fxMain.getClass().getResource("view/RegistrationLayout.fxml"));
+            loader.setLocation(fxMain.getClass().getResource("/view/RegistrationLayout.fxml"));
             registrationLayout = (AnchorPane) loader.load();
 
             RegistrationController controller = loader.getController();

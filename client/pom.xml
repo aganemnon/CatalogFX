@@ -55,7 +55,7 @@
                     <archive>
                         <index>true</index>
                         <manifest>
-                            <addClasspath>false</addClasspath>
+                            <addClasspath>true</addClasspath>
                             <mainClass>com.netcracker.ibublig.catalog.client.FXMain</mainClass>
                         </manifest>
                     </archive>

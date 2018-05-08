@@ -5,7 +5,6 @@ import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -80,7 +79,7 @@ public class FXMain extends Application implements TCPConnectionListener {
         try {
             // Загружаем стартовый макет
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(FXMain.class.getResource("view/AuthorizationLayout.fxml"));
+            loader.setLocation(FXMain.class.getResource("/view/AuthorizationLayout.fxml"));
             AnchorPane root = (AnchorPane) loader.load();
             Scene scene = new Scene(root);
             authorizationController = loader.getController();
@@ -99,7 +98,7 @@ public class FXMain extends Application implements TCPConnectionListener {
             // Загружаем fxml-файл и создаём новую сцену
             // для всплывающего диалогового окна.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(FXMain.class.getResource("view/AdminEditItemLayout.fxml"));
+            loader.setLocation(FXMain.class.getResource("/view/AdminEditItemLayout.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
 
             // Создаём диалоговое окно Stage.
@@ -135,7 +134,7 @@ public class FXMain extends Application implements TCPConnectionListener {
             // Загружаем fxml-файл и создаём новую сцену
             // для всплывающего диалогового окна.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(FXMain.class.getResource("view/AdminEditCategoryLayout.fxml"));
+            loader.setLocation(FXMain.class.getResource("/view/AdminEditCategoryLayout.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
 
             // Создаём диалоговое окно Stage.
@@ -163,7 +162,7 @@ public class FXMain extends Application implements TCPConnectionListener {
     public void showCatalog(User user){
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(FXMain.class.getResource("view/CatalogLayout.fxml"));
+            loader.setLocation(FXMain.class.getResource("/view/CatalogLayout.fxml"));
             Scene scene = new Scene((AnchorPane) loader.load());
             catalogController = loader.getController();
 
